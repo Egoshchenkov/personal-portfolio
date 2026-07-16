@@ -476,7 +476,7 @@ footer {
         flex-direction: column;
         text-align: center;
         min-height: auto;
-        padding-top: 80px;
+        padding-top: 40px;
     }
 
     .hero-text,
@@ -485,7 +485,8 @@ footer {
     }
 
     .hero-image {
-        margin-top: 40px;
+        order: -1;
+        margin-bottom: 30px;
     }
 
     .hero-buttons {
@@ -509,6 +510,7 @@ footer {
 
     .hero-image img {
         width: 220px;
+        height: 220px;
     }
 
     .skills-grid,
