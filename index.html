@@ -47,7 +47,7 @@
 
                 <h3>
                     Computer Science Student | Former Software Engineer |
-                    NY Army National Guard Veteran
+                    Army Veteran
                 </h3>
 
                 <p>
@@ -59,7 +59,7 @@
                 <div class="hero-buttons">
                     <a class="button button-primary" href="#projects">View Projects</a>
 
-                    <a
+                    <a  
                         class="button button-secondary"
                         href="documents/resume.pdf"
                         download
@@ -80,29 +80,31 @@
 
             <div class="about-content">
                 <p>
-                    I am a Computer Science student at Queens College and a
-                    Software Engineer with professional experience developing
-                    enterprise applications.
+                    I am originally from Belarus, where I began my career in a completely different field — energy engineering and government energy and gas supervision.
                 </p>
 
                 <p>
-                    I previously worked at IBA Group on a financial and pension data
-                    automation platform for Marsh McLennan. My experience includes
-                    front-end and full-stack development using JavaScript, Vue.js,
-                    Node.js, Python, MongoDB, HTML, Sass, Git, Jira, Jenkins, and
-                    Bitbucket.
+                    While working as a State Energy Inspector, I realized that my passion was elsewhere. In my free time I started teaching myself programming, beginning with HTML, CSS, and JavaScript, with React becoming the first framework I learned.
                 </p>
 
                 <p>
-                    I am also a military veteran served in the New York
-                    Army National Guard and a graduate of the Microsoft Software and
-                    Systems Academy Cloud Application Development program.
+                    After completing my contract, I successfully transitioned into software engineering and joined IBA Group as a Front-End Developer, working on enterprise financial and pension automation solutions for Marsh McLennan. This period became one of the most exciting chapters of my professional life, combining software development, teamwork, travel, and international collaboration after relocating with my team to Georgia.
                 </p>
 
                 <p>
-                    I enjoy building practical, reliable, and user-friendly software
-                    solutions. I am currently seeking opportunities in full-stack,
-                    front-end, or back-end software development.
+                    Winning the U.S. Diversity Visa Lottery gave me the opportunity to start a new chapter in the United States. After immigrating, I joined the New York Army National Guard to accelerate my integration into American society while continuing to pursue my long-term goal of returning to software engineering.
+                </p>
+
+                <p>
+                    Alongside military service and multiple state missions supporting agencies such as DHS and DOCCS, I enrolled at Queens College to continue my Computer Science education and completed the Microsoft Software and Systems Academy (MSSA) Cloud Application Development program to strengthen my technical skills.
+                </p>
+
+                <p>
+                    Today I am focused on building practical, reliable, and user-friendly software solutions while seeking opportunities in full-stack, front-end, or back-end development.
+                </p>
+
+                <p>
+                    Outside of technology, I organize community choir events as a hobby, bringing together large groups of people through music and shared experiences.
                 </p>
             </div>
         </section>
@@ -219,50 +221,50 @@
 
             <div class="timeline">
 
-                <div class="timeline-item">
+                <a href="https://ibagroupit.com/" class="timeline-item">
                     <h3>Software Engineer</h3>
                     <h4>IBA Group | 2021 - 2022</h4>
                     <p>
                         Worked on enterprise financial software solutions for
                         Marsh McLennan, focusing on pension and wealth data automation.
                     </p>
-                </div>
+                </a>
 
-                <div class="timeline-item">
+                <a href="https://military.microsoft.com/mssa/#MSSA-pillars" class="timeline-item">
                     <h3>Cloud Application Development Graduate</h3>
                     <h4>Microsoft Software and Systems Academy | 2026</h4>
                     <p>
                         Completed the MSSA Cloud Application Development program
                         focused on software engineering and enterprise technologies.
                     </p>
-                </div>
+                </a>
 
-                <div class="timeline-item">
+                <a href="https://www.qc.cuny.edu/academics/cs/" class="timeline-item">
                     <h3>Computer Science Student</h3>
                     <h4>Queens College | 2024 - Present</h4>
                     <p>
                         Pursuing a Bachelor's degree in Computer Science with
                         a strong academic record.
                     </p>
-                </div>
+                </a>
 
-                <div class="timeline-item">
+                <a href="https://dmna.ny.gov/arng/" class="timeline-item">
                     <h3>New York Army National Guard</h3>
                     <h4>Specialist (E-4) | 2023 - 2026</h4>
                     <p>
                         Serving in the New York Army National Guard while continuing
                         academic and professional development.
                     </p>
-                </div>
+                </a>
 
-                <div class="timeline-item">
+                <a href="https://gosenergogaznadzor.by/" class="timeline-item">
                     <h3>State Inspector for Energy and Gas Supervision</h3>
                     <h4>State Energy and Gas Inspection Agency | 2019 - 2021</h4>
                     <p>
                         Conducted inspections and regulatory oversight in the energy
                         sector to ensure compliance with technical and safety standards.
                     </p>
-                </div>
+                </a>
 
             </div>
         </section>
@@ -275,16 +277,20 @@
                 projects, or collaborations.
             </p>
 
-            <form id="contact-form">
+            <form
+                id="contact-form"
+                action="https://formspree.io/f/mjgngayo"
+                method="POST"
+            >
 
                 <label for="name">Name</label>
-                <input type="text" id="name" required>
+                <input type="text" id="name" name="name" required>
 
                 <label for="email">Email</label>
-                <input type="email" id="email" required>
+                <input type="email" id="email" name="email" required>
 
                 <label for="message">Message</label>
-                <textarea id="message" rows="6" required></textarea>
+                <textarea id="message" name="message" rows="6" required></textarea>
 
                 <button type="submit">Send Message</button>
                 <p id="form-status"></p>

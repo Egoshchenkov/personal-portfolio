@@ -1,35 +1,62 @@
-// Status message
+// Form submission
 const form = document.getElementById("contact-form");
-const status = document.getElementById("form-status");
+const statusMessage = document.getElementById("form-status");
+const submitButton = form.querySelector('button[type="submit"]');
 
-form.addEventListener("submit", function (event) {
+form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
-
-    if (!name || !email || !message) {
-        status.textContent = "Please fill out all fields.";
-        status.style.color = "red";
+    if (!form.checkValidity()) {
+        form.reportValidity();
         return;
     }
 
-    status.textContent = "Thank you! This contact form is currently a demo. Please reach out via LinkedIn or email.";
+    const formData = new FormData(form);
 
-    status.style.color = "green";
-    status.style.opacity = "1";
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending...";
 
-    form.reset();
+    try {
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: formData,
+            headers: {
+                Accept: "application/json"
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error("Form submission failed.");
+        }
+
+        showFormStatus("Your message was sent successfully.", "green");
+        form.reset();
+    } catch (error) {
+        showFormStatus(
+            "The message could not be sent. Please try again or contact me by email.",
+            "red"
+        );
+
+        console.error(error);
+    } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "Send Message";
+    }
+});
+
+function showFormStatus(message, color) {
+    statusMessage.textContent = message;
+    statusMessage.style.color = color;
+    statusMessage.style.opacity = "1";
 
     setTimeout(() => {
-        status.style.opacity = "0";
+        statusMessage.style.opacity = "0";
 
         setTimeout(() => {
-            status.textContent = "";
+            statusMessage.textContent = "";
         }, 500);
     }, 5000);
-});
+}
 
 // Highlight nav bar
 const navLinks = document.querySelectorAll("nav a[href^='#']");
